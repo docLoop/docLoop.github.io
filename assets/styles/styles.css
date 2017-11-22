@@ -101,6 +101,17 @@ section.split > article {
 }
 
 
+.logo {
+	display:					inline-block;
+	background-image:			url(../images/docloop_white.svg);
+	background-size:			contain;
+	background-position:		50%;
+	background-repeat:			no-repeat;
+	vertical-align: 			middle;
+	height:						2em;
+	width:						3em;
+}
+
 .text-logo {
 	display:					inline-flex;
 	font-family:				monospace;
@@ -113,8 +124,8 @@ section.split > article {
 }
 
 h1 {
-	font-size:					3em;
-	margin:						1em 0;
+	font-size:					4em;
+	margin:						2rem 0;
 	font-weight:				600;
 }
 
