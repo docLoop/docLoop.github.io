@@ -6,21 +6,37 @@
 
 <html>
 	<head>
-		<title> docLoop </title>
+		<title> docloop </title>
 
 		<link href ="assets/styles/styles.css" 	type="text/css" rel = "stylesheet" /> 
 
 		<meta name ="viewport" content="width=device-width, minimum-scale = 1.0, initial-scale=1.0" />
 
+		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+		<script>
+
+			window.onload = function(){
+				var html = document.getElementsByTagName('html')[0]
+
+
+				window.onscroll = function(event){
+					window.scrollY > 150
+					?	html.classList.add('scrolled')
+					:	html.classList.remove('scrolled')
+				}
+			}
+		</script>
 
 	</head>
 
 	<body>
 		<header> {% include header.html %} </header>
+		<section class = "white"> 	{% include hero.html %} </section>
 		<section class = "white"> 	{% include claim.html %} </section>
-		<section class = "blue"> 	{% include current_state.html %} </section>
+		<section class = "white"> 	{% include current_state.html %} </section>
 		<section class = "white"> 	{% include ideal_use_case.html %} </section>
-		<section class = "blue split"> 	
+		<section class = "white split"> 	
 			{% include features.html %} 
 			{% include contact.html %} 
 		</section>

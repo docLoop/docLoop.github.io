@@ -37,24 +37,106 @@ body > section {
 	box-sizing:					border-box;
 }
 
-header {
-	background-image:			url(../images/background_paper.jpg);
-	background-position:		50% 50%;
-	background-repeat:			no-repeat;
-	background-size:			cover;
+body > header {
+	position:					fixed;
+	top:						0;
+	left:						0;
+	right:						0;
 
-	box-shadow:					0 0 1rem rgba(0,0,0,0.8), 0 -1rem 0rem 0rem rgba(0,0,0,0.3) inset; 
+	background-color:			#3575b1;
+
+	box-shadow:					0 0 1rem rgba(0,0,0,0.8); 
 	
 	color:						#fff;
 
-	position:					relative;
+	opacity:					0.2;
+
+	filter:						grayscale(100%);
+
+	font-size:					1.1rem;
+
 	z-index:					10;
 	overflow:					visible;
+
+	transition:					all 600ms ease-in-out;
+}
+
+
+.scrolled body > header,
+body > header:hover {
+	opacity:					0.9;
+	filter:						grayscale(0%);
+}
+
+body > header:hover {
+	transition:					all 150ms linear;
+}
+
+body > header > * {
+	height:						3rem;
+	display:					flex;
+	color:						#fff;
+	align-items:				center;
+}
+
+body > header  a {
+	color:						#fff;
+	border:						none !important;
+	font-variant:				small-caps;
+}
+
+#hero {
+	height:						95vh;
+	text-align:					left;
+}
+
+#hero .logo {
+	display:					block;
+	background-color:			#3575b1;
+	height:						10rem;
+	width:						10rem;
+
+	margin-top:					10vh;
+	margin-left:				auto;
+	margin-right:				auto;
+	margin-bottom:				13vh;
+
+	background-size:			66%;
+
+	border-radius:				100%;
+}
+
+#hero h1 {
+	font-size:					2rem;
+	margin:						0;
+}
+
+#hero h2 {
+	margin-top:					0.5rem;
+	margin-bottom:				1rem;
+	font-weight:				300;
+}
+
+#hero nav {
+	display:					flex;
+	flex-direction:				column;
+}
+
+#hero nav > * {
+	color:						#3575b1;
+	border:						none !important;
+	font-variant: 				small-caps;
+	margin:						0.25rem 0;
+}
+
+
+body > header > * > * +* {
+	margin-left:				2rem;
 }
 
 body > section {
 	color:						rgba(0,0,0,0.8);
-	border-bottom:				0.2rem dashed rgba(0,0,0,0.2)
+	border-bottom:				0.15rem dashed rgba(0,0,0,0.2)
 }
 
 body > section:last-child{
@@ -75,15 +157,18 @@ section.white {
 	background-color:			#fff;
 }
 
-header > article,
+header > *,
 section > article {
 	box-sizing:					border-box;
-	padding:					2.5rem 3rem;
-	min-height: 				5rem;
-	text-align:					center;
 	max-width:					64rem;
 	margin:						auto;
 
+}
+
+section > article {
+	text-align:					center;
+	min-height: 				5rem;
+	padding:					15vh 1rem;
 }
 
 section.split {
@@ -112,15 +197,30 @@ section.split > article {
 	width:						3em;
 }
 
+.logo.nowrap {
+	background-image:			url(../images/docloop_white_nowrap.svg);
+	font-size:					1.8rem;
+	height:						1em;
+	width:						3.787671233em;
+}
+
+.logo.nowrap.blue {
+	background-image:			url(../images/docloop_blue_nowrap.svg);
+}
+
 .text-logo {
 	display:					inline-flex;
-	font-family:				monospace;
-	font-weight:				600;
+	font-weight:				400;
 	font-size:					1.2em;
 }
 
 .text-logo > * {
 	flex:						0 0 auto;
+}
+
+
+.flex-space {
+	flex:						1 0 0;
 }
 
 h1 {
