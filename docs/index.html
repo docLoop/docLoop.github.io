@@ -40,7 +40,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopCore.html">docloop.DocloopCore</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
+					<li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
 				</ul>
 			</li>
 			
@@ -48,6 +48,13 @@
 				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
 					<li><a href="module-docloop.DocloopAdapter.html#.event:annotation">docloop.DocloopAdapter.event:annotation</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-established">docloop.DocloopCore.event:link-established</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-removed">docloop.DocloopCore.event:link-removed</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-updated">docloop.DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-custom_adapters.html">Custom adapters</a></li>
 				</ul>
 			</li>
 			
@@ -106,6 +113,62 @@
 
 
 
+    <section class="readme-section">
+        <article><h1>docloop</h1><p>docloop turns feedback into tasks, <br/>
+converting online annotations of a document into issues in the author's bug tracking system.</p>
+<p>For each platform you want to use with it you will need a separate adapter. 
+The core module does not come with any real adapters, but here's two of them to install additionally:</p>
+<ul>
+<li><a href="https://github.com/docloop/paperhive-adapter">PaperhiveAdapter</a></li>
+<li><a href="https://github.com/docloop/github-adapter">GithubAdapter</a></li>
+</ul>
+<p>With these two adapters in charge, docloop converts comments and replies of Paperhive documents into Github issues.</p>
+<p>Check the example app at https://app.docloop.net</p>
+<p>The core module and the two adapters are documented here: <a href="https://docloop.github.io/docs">docloopDocs</a></p>
+<h2>Requirements</h2><p>docloop is built using node and published using npm.
+To install it you need <a href="https://nodejs.org">Node.JS</a>.
+To actually run it you will also need a <a href="https://www.mongodb.com/">MongoDB</a> to connect to.</p>
+<h2>Quick start</h2><p>First of all get the core module:</p>
+<pre class="prettyprint source"><code>npm install docloop</code></pre><p>Setup up a MongoDB and use its credentials in the following minimal example:</p>
+<pre class="prettyprint source lang-javascript"><code>var docloop         = require(&quot;docloop&quot;),
+    DocloopCore     = docloop.DocloopCore,
+    DocloopAdapter  = docloop.DocloopAdapter,
+    DocloopEndpoint = docloop.DocloopEndpoint
+
+var docloopCore     = new DocloopCore({
+                        port:     7777,
+                        sessionSecret:  'abc',
+                        db:{
+                          name:     &quot;your_db_name&quot;,
+                          port:     27010,          //or wherever your db is running
+                          user:     &quot;your_db_user&quot;, //if authentication is required
+                          pass:     &quot;your_db_pass&quot;, //if authentication is required
+                          address:  &quot;127.0.0.1&quot;     //or wherever your db is running
+                        }
+                      })
+
+docloopCore
+.use(DocloopAdapter,{
+  id:       'custom-source-adapter',
+  type:     'source',
+  endpointClass:  DocloopEndpoint,
+})
+.use(DocloopAdapter,{
+  id:       'custom-target-adapter',
+  type:     'target',
+  endpointClass:  DocloopEndpoint,
+})
+.run()</code></pre><p>With this docloop is running on localhost:7777. Communication works via http requests.</p>
+<p>To actually see something you should get the client: <a href="https://github.com/docloop/client">docloopClient</a></p>
+<p>Clone the repository and serve the SRC-directory (will improve on that in the future). Set the backendUrl in app.js or config.js to 
+localhost:7777 and the app should work with the exmaple code above.</p>
+<p>Alas, the example code doesn't do much. The DocloopAdapter is only a generic base class for custom adapters. It doesn't really do anything on its own.
+In Order to have the example do something useful you might want to install the above mentioned adpaters or write your own adapter class.</p>
+<p>Using the paperhive-adapter is straight forward. The github-adapter however requires you to setup a <a href="https://developer.github.com/apps/">GithubApp</a> beforehand.</p>
+<p>The <a href="https://app.docloop.net">example app</a> uses the code from <a href="https://github.com/docloop/backend">docloopBackend</a>.</p>
+<p>Check the <a href="https://docloop.github.io/docs">documenation</a> for configuration options of the two adapters. There's also a tutorial for a more complex example with custom adapters.</p></article>
+    </section>
+
 
 
 
@@ -149,7 +212,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-02-26T15:34:43+01:00
+		on 2018-02-27T22:53:35+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

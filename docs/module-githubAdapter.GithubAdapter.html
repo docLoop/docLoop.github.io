@@ -40,7 +40,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopCore.html">docloop.DocloopCore</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
+					<li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
 				</ul>
 			</li>
 			
@@ -48,6 +48,13 @@
 				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
 					<li><a href="module-docloop.DocloopAdapter.html#.event:annotation">docloop.DocloopAdapter.event:annotation</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-established">docloop.DocloopCore.event:link-established</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-removed">docloop.DocloopCore.event:link-removed</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-updated">docloop.DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-custom_adapters.html">Custom adapters</a></li>
 				</ul>
 			</li>
 			
@@ -161,7 +168,7 @@ TODO: typedefs for params and proerties.</p>
             <td class="type">
             
                 
-<span class="param-type">DocloopCore</span>
+<span class="param-type"><a href="DocloopCore.html">DocloopCore</a></span>
 
 
 
@@ -2060,354 +2067,6 @@ TODO: typedefs for params and proerties.</p>
             
 <hr>
 <dt>
-    <h4 class="name" id="_handleGetEndpointsRequest"><span class="type-signature">&lt;async> </span>_handleGetEndpointsRequest()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Express request handler. Sends privileged Enpoints to the client.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="module-docloop.DocloopAdapter.html#_handleGetEndpointsRequest">module:docloop.DocloopAdapter#_handleGetEndpointsRequest</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="_handleGetGuessEndpointRequest"><span class="type-signature">&lt;async> </span>_handleGetGuessEndpointRequest()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Express request handler. Guesses Endpoint from request paramter and sends it to the client.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="module-docloop.DocloopAdapter.html#_handleGetGuessEndpointRequest">module:docloop.DocloopAdapter#_handleGetGuessEndpointRequest</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="_handleGetRequest"><span class="type-signature">&lt;async> </span>_handleGetRequest()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Express request handler. Sends AdapterData to the client.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="module-docloop.DocloopAdapter.html#_handleGetRequest">module:docloop.DocloopAdapter#_handleGetRequest</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="_handlePostSignOff"><span class="type-signature">&lt;async> </span>_handlePostSignOff()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Express request handler. Clears current session data for this adapter.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="module-docloop.DocloopAdapter.html#_handlePostSignOff">module:docloop.DocloopAdapter#_handlePostSignOff</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
     <h4 class="name" id="getAuthState"><span class="type-signature">&lt;async> </span>getAuthState(session_data)</h4>
     
     
@@ -3217,7 +2876,7 @@ TODO: typedefs for params and proerties.</p>
             
 <hr>
 <dt>
-    <h4 class="name" id="handleOAuthCallback"><span class="type-signature">&lt;async> </span>handleOAuthCallback(req, res)</h4>
+    <h4 class="name" id="handleOAuthCallback"><span class="type-signature">&lt;async, route> </span>handleOAuthCallback(req, res)</h4>
     
     
 </dt>
@@ -3225,7 +2884,15 @@ TODO: typedefs for params and proerties.</p>
 
     
     <div class="description">
-        <p>Handle request sent by github after successful authorization. 
+        <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/adapters/github/oauth/callback</td>
+                            </tr>
+                            </table>
+                            <p>Handle request sent by github after successful authorization. 
 Uses the app config data and posted code to gain access token from github and store it in session data for later use.
 If successful redirects back to the configured front end url.</p>
     </div>
@@ -3394,20 +3061,11 @@ If successful redirects back to the configured front end url.</p>
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    <p>undefined</p>
+</div>
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">undefined</span>
-
-
-
-    </dd>
-</dl>
 
 
         
@@ -3922,7 +3580,7 @@ If successful redirects back to the configured front end url.</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-02-26T15:34:44+01:00
+		on 2018-02-27T22:53:36+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

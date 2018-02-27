@@ -40,7 +40,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopCore.html">docloop.DocloopCore</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
+					<li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
 				</ul>
 			</li>
 			
@@ -48,6 +48,13 @@
 				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
 					<li><a href="module-docloop.DocloopAdapter.html#.event:annotation">docloop.DocloopAdapter.event:annotation</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-established">docloop.DocloopCore.event:link-established</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-removed">docloop.DocloopCore.event:link-removed</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-updated">docloop.DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-custom_adapters.html">Custom adapters</a></li>
 				</ul>
 			</li>
 			
@@ -100,7 +107,8 @@
             <div class="class-description"><p>This Class and any Class that extends DocloopAdapter are supposed to be passed to DocloopCore.use().</p>
 <p>All methods that start with an underscore '_' expect the actual session to be passed as argument and will 
 usually have a counterpart without the leading underscore that expects the adapter's session data as argument instead.</p>
-<p>The preferred way for an adapter to communicate with the core system or other adapters is through events. See <a href="module-docloop.DocloopCore.html#relayEvent">module:docloop.DocloopCore#relayEvent</a>.</p></div>
+<p>The preferred way for an adapter to communicate with the core system or other adapters is through events. See module:docloop.DocloopCore#relayEvent.</p>
+<p>Tutorial: <a href="tutorial-custom_adapters.html">Custom adapters</a></p></div>
         
     
 </header>
@@ -157,7 +165,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             <td class="type">
             
                 
-<span class="param-type">DocloopCore</span>
+<span class="param-type"><a href="DocloopCore.html">DocloopCore</a></span>
 
 
 
@@ -575,7 +583,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             <td class="type">
             
                 
-<span class="param-type">DocloopCore</span>
+<span class="param-type"><a href="DocloopCore.html">DocloopCore</a></span>
 
 
 
@@ -1999,7 +2007,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 <hr>
 <dt>
-    <h4 class="name" id="_handleGetEndpointsRequest"><span class="type-signature">&lt;async> </span>_handleGetEndpointsRequest()</h4>
+    <h4 class="name" id="_handleGetEndpointsRequest"><span class="type-signature">&lt;async, route> </span>_handleGetEndpointsRequest(req, res)</h4>
     
     
 </dt>
@@ -2007,7 +2015,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 
     
     <div class="description">
-        <p>Express request handler. Sends privileged Enpoints to the client.</p>
+        <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/adapters/:adapter-id/endpoints</td>
+                            </tr>
+                            </table>
+                            <p>Express request handler. Sends privileged Enpoints to the client.</p>
     </div>
     
 
@@ -2016,6 +2032,80 @@ usually have a counterpart without the leading underscore that expects the adapt
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express request object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express result object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -2077,7 +2167,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 <hr>
 <dt>
-    <h4 class="name" id="_handleGetGuessEndpointRequest"><span class="type-signature">&lt;async> </span>_handleGetGuessEndpointRequest()</h4>
+    <h4 class="name" id="_handleGetGuessEndpointRequest"><span class="type-signature">&lt;async, route> </span>_handleGetGuessEndpointRequest(req, res)</h4>
     
     
 </dt>
@@ -2085,7 +2175,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 
     
     <div class="description">
-        <p>Express request handler. Guesses Endpoint from request paramter and sends it to the client.</p>
+        <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/adapters/:adapter-id/guessEndpoint/:str</td>
+                            </tr>
+                            </table>
+                            <p>Express request handler. Guesses Endpoint from request paramter and sends it to the client.</p>
     </div>
     
 
@@ -2094,6 +2192,180 @@ usually have a counterpart without the leading underscore that expects the adapt
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express request object</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Request parameters</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>String to guess the endpoint from</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express result object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -2155,7 +2427,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 <hr>
 <dt>
-    <h4 class="name" id="_handleGetRequest"><span class="type-signature">&lt;async> </span>_handleGetRequest()</h4>
+    <h4 class="name" id="_handleGetRequest"><span class="type-signature">&lt;async, route> </span>_handleGetRequest(req, res)</h4>
     
     
 </dt>
@@ -2163,7 +2435,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 
     
     <div class="description">
-        <p>Express request handler. Sends AdapterData to the client.</p>
+        <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/adapters/:adapter-id</td>
+                            </tr>
+                            </table>
+                            <p>Express request handler. Sends AdapterData to the client.</p>
     </div>
     
 
@@ -2172,6 +2452,80 @@ usually have a counterpart without the leading underscore that expects the adapt
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express request object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express result object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -2233,7 +2587,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 <hr>
 <dt>
-    <h4 class="name" id="_handlePostSignOff"><span class="type-signature">&lt;async> </span>_handlePostSignOff()</h4>
+    <h4 class="name" id="_handlePostSignOff"><span class="type-signature">&lt;async, route> </span>_handlePostSignOff()</h4>
     
     
 </dt>
@@ -2241,7 +2595,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 
     
     <div class="description">
-        <p>Express request handler. Clears current session data for this adapter.</p>
+        <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/adapters/:adapter-id/signoff</td>
+                            </tr>
+                            </table>
+                            <p>Express request handler. Clears current session data for this adapter.</p>
     </div>
     
 
@@ -3670,7 +4032,7 @@ usually have a counterpart without the leading underscore that expects the adapt
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-02-26T15:34:44+01:00
+		on 2018-02-27T22:53:36+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
