@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>docloop Tutorial: Custom adapters</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">docloop</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-docloop.html">docloop</a></li><li><a href="module-githubAdapter.html">githubAdapter</a></li><li><a href="module-paperhiveAdapter.html">paperhiveAdapter</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-docloop.DocloopAdapter.html#.event:annotation">docloop.DocloopAdapter.event:annotation</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-established">docloop.DocloopCore.event:link-established</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-removed">docloop.DocloopCore.event:link-removed</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-updated">docloop.DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-custom_adapters.html">Custom adapters</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html">Global</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			<section class="tutorial-section">
+
+<header>
+    
+
+    <h2>Custom adapters</h2>
+</header>
+
+<article>
+    <p>In order to make the most use of the <a href="DocloopCore.html">DocloopCore</a> you can write your own custom adapters for any platform, 
+online service or tool you like.</p>
+<p>Every custom adapter has to provide two things: </p>
+<ul>
+<li>an adapter class</li>
+<li>an endpoint class</li>
+</ul>
+<p>The adapter class is expected to extend DocloopAdapter and the endpoint class should extend DocloopEndpoint.</p>
+<p>The method of DocloopAdapter and DocloopEndpoint marked as abstract are meant to be overwritten by your custom classes.</p>
+<h3>Example source adapter</h3><p>This source adapter will provide three fixed sources and for every source that is linked to a target it will trigger a mock annotation.</p>
+<pre class="prettyprint source lang-javascript"><code>var docloop         = require(docloop),
+    DocloopAdapter  = docloop.DocloopAdapter,
+    DocloopEndpoint = docloop.DocloopEndpoint
+
+
+
+
+class ExampleSourceAdapter extends DocloopAdapter {
+
+  //Every adapter expects the core and a configuration object as arguments for its constructor:
+  constructor(core, config){
+  super(core, {
+    ...config,
+    id:                     'example-source-adapter',
+    name:                   'Example Source Adapter',
+    type:                   'source',
+    endpointClass:          ExampleSource, //see below
+  })
+
+  //make all stored events announce annotation every 5 seconds; see below
+  setInterval( () => this.mockScan(), 5000)
+  }
+
+  //We are just returning a fixed set of endpoints. 
+  //A real-life adapter should query some external resource making use of data stored with the session.
+  async getEndpoints(session){
+  return  [
+      //creates an instance of ExampleSource with this adapter instance as adapter:
+      this.newEndpoint({
+        identifier: {
+          adapter:  'example-source-adapter',
+          name:   'source-one'
+        },
+
+        decor:{
+          title:    'Source One',
+          details:  'the first example source'
+        }
+      }),
+
+      this.newEndpoint({
+        identifier: {
+          adapter:  'example-source-adapter',
+          name:   'source-two'
+        },
+
+        decor:{
+          title:    'Source Two',
+          details:  'the second example source'
+        }
+      }),
+
+      this.newEndpoint({
+        identifier: {
+          adapter:  'example-source-adapter',
+          name:   'source-three'
+        },
+
+        decor:{
+          title:    'Source Three',
+          details:  'the thrid example source'
+        }
+      }),
+
+    ]
+  }
+
+  //This method should actually only return stored endpoint relevant to the session, but as before, we ignore that for the example.
+  async getStoredEndpoints(session){
+    var raw_endpoints = await this.endpoints.find({}).toArray() 
+
+    return raw_endpoints.map( endpoint_data => this.newEndpoint(endpoint_data))
+  }
+
+
+  async mockScan(){
+    //make each stored source emit an annotation event on the adapter
+
+    var sources = await this.getStoredEndpoints()
+
+    sources.forEach( source => {
+      this.emit('annotation', {
+        annotation:{
+          id:                123,
+          sourceName:        this.name,
+          sourceHome:        undefined,
+          title:             &quot;Example Annotation – &quot;+source.identifier.name,
+          author:            &quot;Example Author&quot;,
+          body:              new Date().toString(),
+          respectiveContent: undefined,
+          original:          source.identifier.name,
+        },
+
+        //this part makes the core reemit this event, replacing source <a href="global.html#EndpointSkeleton">EndpointSkeleton</a> with a linked target <a href="global.html#EndpointSkeleton">EndpointSkeleton</a>:
+        source: source.skeleton
+      })
+    })  
+  }
+
+}
+
+
+class ExampleSource extends DocloopEndpoint{
+
+  //Every Endpoint expects an adapter instance and <a href="global.html#EndpointData">EndpointData</a> as arguments for its constructor:
+  constructor(adapter, data){
+    super(adapter, data)
+  }
+
+  //validate the endpoint no matter what, not a good idea for a rea-life adapter!
+  async validate(session_data){
+    return true
+  }
+}</code></pre><h3>Example target adapter</h3><p>This target adapter provides two fixed targets. It will listen for annotations and log corresponding data to the console.</p>
+<pre class="prettyprint source lang-javascript"><code>class ExampleTargetAdapter extends DocloopAdapter {
+
+  //Every adapter expects the core and a configuration object as arguments for its constructor:
+  constructor(core, config){
+    super(core, {
+      ...config,
+      id:                 'example-target-adapter',
+      name:               'Example Target Adapter',
+      type:           'target',
+      endpointClass:      ExampleTarget, //see below
+      endpointDefaultConfig:  {
+                    doTheTargetThing: true
+                  }
+    })
+
+    //Listen for annotations:
+    this.core.on('annotation', this.handleAnnotation.bind(this))
+  }
+
+  async getEndpoints(session_data){
+  //We are just returning a fixed set of endpoints. 
+  //A real-life adapter should query some external resource making use of data stored with the session.
+
+  return  [
+        //creates an instance of ExampleTarget with this adapter instance as adapter:
+        this.newEndpoint({
+          identifier: {
+            adapter:  'example-target-adapter',
+            name:   'target-a'
+          },
+
+          decor:{
+            title:    'Target A',
+            details:  'the first example target'
+          }
+        }),
+
+        this.newEndpoint({
+          identifier: {
+            adapter:  'example-target-adapter',
+            name:   'target-b'
+          },
+
+          decor:{
+            title:    'Target B',
+            details:  'the second example target'
+          }
+        })
+      ]
+  }
+
+
+  //This method should actually only return stored endpoint relevant to the session. but as before, we ignore that for the exmaple.
+  async getStoredEndpoints(session){
+    var raw_endpoints = await this.endpoints.find({}).toArray() 
+
+    return raw_endpoints.map( endpoint_data => this.newEndpoint(endpoint_data))
+  }
+
+  async handleAnnotation(annotation_data){
+    //check if the annotation was meant to be proccessed by this adapter; if not leave.
+    if(annotation_data.target.adapter != this.id) return null
+
+    var target  =   await this.getStoredEndpoint(annotation_data.target.id),
+      a   = annotation_data.annotation
+
+    if(target){
+      console.log(`New issue for ${target.identifier.name}@${target.identifier.adapter} (spawned by ${a.original})`)
+      console.log(` 
+        => ${a.author} says: &quot;Greetings from ${a.title}&quot; 
+        at ${a.body}
+      `)
+    }
+
+  }
+
+}
+
+
+class ExampleTarget extends DocloopEndpoint{
+
+  //Every Endpoint expects an adapter instance and <a href="global.html#EndpointData">EndpointData</a> as arguments for its constructor:
+  constructor(adapter, data){
+    super(adapter, data)
+  }
+
+  //validate the endpoint no matter what, not a good idea for a rea-life adapter!
+  async validate(session_Data){
+    return true
+  }
+}</code></pre><h3>Put it all together</h3><p>The core can use the two adapters like this:</p>
+<pre class="prettyprint source lang-javascript"><code>//log whenever a new link is established
+docloopCore.on('link-established', link => console.log(`Link established: ${link.source.adapter} &lt;-> ${link.target.adapter}`))
+
+docloopCore
+.use(ExampleSourceAdapter)
+.use(ExampleTargetAdapter)
+.run()</code></pre><p>Before all this works you have to configure the <a href="DocloopCore.html">DocloopCore</a> itself; here's an example of how this will work: <a href="index.html">README</a></p>
+<p>If everything is up an running, you should be able to use the client (see <a href="index.html">README</a>). 
+Go ahead and select the source adapter and one of the three sources. Then select the target adapter and on eof the two targets.</p>
+<p>Creating the link should spwan a message on the console.</p>
+<p>From now on every five seconds the console will log the targets' processing of the annotations created by the mock scan above.</p>
+</article>
+
+</section>
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on 2018-02-27T22:53:36+01:00
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
