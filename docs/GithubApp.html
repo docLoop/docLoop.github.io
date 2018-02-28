@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>docloop Class: PaperhiveAdapter</title>
+	<title>docloop Class: GithubApp</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,14 +40,14 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
+					<li><a href="DocloopAdapter.html">DocloopAdapter</a></li><li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="DocloopEndpoint.html">DocloopEndpoint</a></li><li><a href="DocloopError.html">DocloopError</a></li><li><a href="DocloopLink.html">DocloopLink</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="EventQueue-QueuedEvent.html">EventQueue~QueuedEvent</a></li><li><a href="GithubAdapter.html">GithubAdapter</a></li><li><a href="GithubApp.html">GithubApp</a></li><li><a href="GithubTarget.html">GithubTarget</a></li><li><a href="GithubUser.html">GithubUser</a></li><li><a href="PaperhiveAdapter.html">PaperhiveAdapter</a></li><li><a href="PaperhiveSource.html">PaperhiveSource</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-docloop.DocloopAdapter.html#.event:annotation">docloop.DocloopAdapter.event:annotation</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-established">docloop.DocloopCore.event:link-established</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-removed">docloop.DocloopCore.event:link-removed</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-updated">docloop.DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
+					<li><a href="DocloopAdapter.html#.event:annotation">DocloopAdapter.event:annotation</a></li><li><a href="DocloopCore.html#.event:link-established">DocloopCore.event:link-established</a></li><li><a href="DocloopCore.html#.event:link-removed">DocloopCore.event:link-removed</a></li><li><a href="DocloopCore.html#.event:link-updated">DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
 				</ul>
 			</li>
 			
@@ -93,18 +93,18 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: PaperhiveAdapter</h1>
+	<h1 class="page-title">Class: GithubApp</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-paperhiveAdapter.html">paperhiveAdapter</a>.</span>
+            <span class="ancestors"><a href="module-githubAdapter.html">githubAdapter</a></span>
         
-        PaperhiveAdapter
+        GithubApp
         </h2>
         
-            <div class="class-description"><p>Adapter to harvest public annotations from paperhive.</p></div>
+            <div class="class-description"><p>Class representing minimal Github API wrapper for app interaction.</p></div>
         
     
 </header>
@@ -116,7 +116,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="PaperhiveAdapter"><span class="type-signature"></span>new PaperhiveAdapter(core, config, home, contentLink, extraEndpoints, scanningInterval)</h4>
+    <h4 class="name" id="GithubApp"><span class="type-signature"></span>new GithubApp(config)</h4>
     
     
 </dt>
@@ -155,30 +155,6 @@
 
         <tr>
             
-                <td class="name"><code>core</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="DocloopCore.html">DocloopCore</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>config</code></td>
             
 
@@ -196,14 +172,33 @@
 
             
 
-            <td class="description last"><p>Configuration object</p></td>
-        </tr>
+            <td class="description last">
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
 
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
             
-                <td class="name"><code>home</code></td>
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
@@ -220,14 +215,14 @@
 
             
 
-            <td class="description last"><p>Website of the used paperhive instance.</p></td>
+            <td class="description last"><p>GithubApp Id</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>contentLink</code></td>
+                <td class="name"><code>cert</code></td>
             
 
             <td class="type">
@@ -244,55 +239,14 @@
 
             
 
-            <td class="description last"><p>Url of paperhive doument's discussion. Use %s in this string to indicate the positin of the document's id.</p></td>
+            <td class="description last"><p>GithubApp private key data</p></td>
         </tr>
 
     
+    </tbody>
+</table>
 
-        <tr>
-            
-                <td class="name"><code>extraEndpoints</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-
-            
             </td>
-
-            
-
-            
-
-            <td class="description last"><p>True iff there are addtional non privileged endpoints.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>scanningInterval</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Time between two scans in milliseconds.</p></td>
         </tr>
 
     
@@ -331,7 +285,7 @@
 
         <tr>
             
-                <td class="name"><code>endpointDefaultConfig</code></td>
+                <td class="name"><code>app</code></td>
             
 
             <td class="type">
@@ -348,58 +302,7 @@
 
             
 
-            <td class="description last">
-                <h6>Properties</h6>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>includePastAnnotations</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>If set to true, the adapter will collect all annotations from a source, 
-                                                                    as soon as a link is established. This might be undesirable for documents with a 
-                                                                    large amount of annotations.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
+            <td class="description last"><p>Instance of github-app (TODO:add link)</p></td>
         </tr>
 
     
@@ -462,17 +365,6 @@
 
     
     </div>
-
-    
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li>DocloopAdapter</li>
-    </ul>
-
 
     
 
@@ -493,7 +385,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getEndpoints"><span class="type-signature">&lt;async> </span>getEndpoints()</h4>
+    <h4 class="name" id="createOrUpdateComment"><span class="type-signature">&lt;async> </span>createOrUpdateComment(target_identifier, comment)</h4>
     
     
 </dt>
@@ -501,211 +393,7 @@
 
     
     <div class="description">
-        <p>There are no privileged endpoints. This Adapter only uses public paperhive documents.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>[]</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getStoredEndpoints"><span class="type-signature">&lt;async> </span>getStoredEndpoints()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>There are no privileged endpoints. This Adapter only uses public paperhive documents.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>[]</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="handleLinkEstablishedEvent"><span class="type-signature">&lt;async> </span>handleLinkEstablishedEvent(link)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>If the source matches this adapter it will be scanned for annotations and replies.</p>
+        <p>Create or update an Issue. If comment.id is provided, update the corresponding comment, otherwise create a new one.</p>
     </div>
     
 
@@ -740,13 +428,37 @@
 
         <tr>
             
-                <td class="name"><code>link</code></td>
+                <td class="name"><code>target_identifier</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">DocloopLink.skeleton</span>
+<span class="param-type"><a href="DocloopEndpoint.html#Identifier">Identifier</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Identifier pointing at a github repository</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>comment</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Comment</span>
 
 
 
@@ -811,11 +523,6 @@
     
 
     
-    <h5>Listens to Events:</h5>
-    <ul>
-        <li>event:link-established</li>
-    </ul>
-    
 
     
 
@@ -826,10 +533,23 @@
     
             
 <div class="param-desc">
-    <p>undefined</p>
+    <p>The github comment number</p>
 </div>
 
 
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
 
 
         
@@ -841,7 +561,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="scanSources"><span class="type-signature">&lt;async> </span>scanSources()</h4>
+    <h4 class="name" id="createOrUpdateIssue"><span class="type-signature">&lt;async> </span>createOrUpdateIssue(target_identifier, issue)</h4>
     
     
 </dt>
@@ -849,7 +569,7 @@
 
     
     <div class="description">
-        <p>Scan all stored source for new annotations or replies</p>
+        <p>Create or Update an Issue. If issue.number is provided, update the corresponding issue, otherwise create a new one .</p>
     </div>
     
 
@@ -858,6 +578,80 @@
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target_identifier</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="DocloopEndpoint.html#Identifier">Identifier</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Identifier pointing at a github repository</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>issue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Issue</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -915,10 +709,176 @@
     
             
 <div class="param-desc">
-    <p>undefined</p>
+    <p>The github issue number</p>
 </div>
 
 
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getRepositories"><span class="type-signature">&lt;async> </span>getRepositories(installation_id)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get all repositories the installation has access to.</p>
+<p>This method is augumented by module:docloop#cache(2000). Return values will be cached for 2 seconds, to prevent huge numbers of API calls.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>installation_id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>GithubApp installation id</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>For each repository a subset of the data provided by github.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+
+    </dd>
+</dl>
 
 
         
@@ -976,7 +936,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-02-27T22:53:36+01:00
+		on 2018-02-28T02:09:49+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

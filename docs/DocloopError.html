@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>docloop Class: GithubUser</title>
+	<title>docloop Class: DocloopError</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,14 +40,14 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
+					<li><a href="DocloopAdapter.html">DocloopAdapter</a></li><li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="DocloopEndpoint.html">DocloopEndpoint</a></li><li><a href="DocloopError.html">DocloopError</a></li><li><a href="DocloopLink.html">DocloopLink</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="EventQueue-QueuedEvent.html">EventQueue~QueuedEvent</a></li><li><a href="GithubAdapter.html">GithubAdapter</a></li><li><a href="GithubApp.html">GithubApp</a></li><li><a href="GithubTarget.html">GithubTarget</a></li><li><a href="GithubUser.html">GithubUser</a></li><li><a href="PaperhiveAdapter.html">PaperhiveAdapter</a></li><li><a href="PaperhiveSource.html">PaperhiveSource</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-docloop.DocloopAdapter.html#.event:annotation">docloop.DocloopAdapter.event:annotation</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-established">docloop.DocloopCore.event:link-established</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-removed">docloop.DocloopCore.event:link-removed</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-updated">docloop.DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
+					<li><a href="DocloopAdapter.html#.event:annotation">DocloopAdapter.event:annotation</a></li><li><a href="DocloopCore.html#.event:link-established">DocloopCore.event:link-established</a></li><li><a href="DocloopCore.html#.event:link-removed">DocloopCore.event:link-removed</a></li><li><a href="DocloopCore.html#.event:link-updated">DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
 				</ul>
 			</li>
 			
@@ -93,18 +93,20 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: GithubUser</h1>
+	<h1 class="page-title">Class: DocloopError</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-githubAdapter.html">githubAdapter</a>.</span>
+            <span class="ancestors"><a href="module-docloop.html">docloop</a></span>
         
-        GithubUser
+        DocloopError
         </h2>
         
-            <div class="class-description"><p>Class representing minimal Github API wrapper for user interaction.</p></div>
+            <div class="class-description"><p>Custom error. Since most http requests will be handled by the docloop core or one of the base classes, 
+it is difficult for adapters to set the status code themselves. 
+This error class lets them make a proposal for the error code, for when the error at hand eventually causes a request to fail.</p></div>
         
     
 </header>
@@ -116,156 +118,12 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="GithubUser"><span class="type-signature"></span>new GithubUser()</h4>
+    <h4 class="name" id="DocloopError"><span class="type-signature"></span>new DocloopError(message, status)</h4>
     
     
 </dt>
 <dd>
 
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>github</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Instance of GitHubApi (TODO: add link)</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="get"><span class="type-signature">&lt;async> </span>get(token)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Get Github user data. </p>
-<p>This method is augumented by module:docloop#cache(2000) return value will be cached for 2 seconds in order to prevent huge numbers of API calls.</p>
-    </div>
     
 
     
@@ -299,7 +157,7 @@
 
         <tr>
             
-                <td class="name"><code>token</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
@@ -316,177 +174,20 @@
 
             
 
-            <td class="description last"><p>Github user access token</p></td>
+            <td class="description last"><p>Error description</p></td>
         </tr>
 
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Throws:</h5>
-    
-            
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        <p>If token is not a string.</p>
-        </div>
-    </dt>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">TypeError</span>
-
-
-
-            </dd>
-        </dl>
-    </dt>
-</dl>
-
-
-        
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>Github user data</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getInstallations"><span class="type-signature">&lt;async> </span>getInstallations(token)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Get data for all installations granted access to by provided access token.</p>
-<p>This method is augumented by module:docloop#cache(2000) return value will be cached for 2 seconds in order to prevent huge numbers of API calls.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
     
 
         <tr>
             
-                <td class="name"><code>token</code></td>
+                <td class="name"><code>status</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Number</span>
 
 
 
@@ -497,7 +198,7 @@
 
             
 
-            <td class="description last"><p>Github user access token</p></td>
+            <td class="description last"><p>Proposed HTML status code in case this error causes a request to fail.</p></td>
         </tr>
 
     
@@ -557,35 +258,25 @@
     
 
     
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>Installation id of each accessible installation</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;Object></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
 
     
 </dd>
 
-        </dl>
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -635,7 +326,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-02-27T22:53:36+01:00
+		on 2018-02-28T02:09:49+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

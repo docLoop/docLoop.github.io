@@ -40,14 +40,14 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
+					<li><a href="DocloopAdapter.html">DocloopAdapter</a></li><li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="DocloopEndpoint.html">DocloopEndpoint</a></li><li><a href="DocloopError.html">DocloopError</a></li><li><a href="DocloopLink.html">DocloopLink</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="EventQueue-QueuedEvent.html">EventQueue~QueuedEvent</a></li><li><a href="GithubAdapter.html">GithubAdapter</a></li><li><a href="GithubApp.html">GithubApp</a></li><li><a href="GithubTarget.html">GithubTarget</a></li><li><a href="GithubUser.html">GithubUser</a></li><li><a href="PaperhiveAdapter.html">PaperhiveAdapter</a></li><li><a href="PaperhiveSource.html">PaperhiveSource</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-docloop.DocloopAdapter.html#.event:annotation">docloop.DocloopAdapter.event:annotation</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-established">docloop.DocloopCore.event:link-established</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-removed">docloop.DocloopCore.event:link-removed</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-updated">docloop.DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
+					<li><a href="DocloopAdapter.html#.event:annotation">DocloopAdapter.event:annotation</a></li><li><a href="DocloopCore.html#.event:link-established">DocloopCore.event:link-established</a></li><li><a href="DocloopCore.html#.event:link-removed">DocloopCore.event:link-removed</a></li><li><a href="DocloopCore.html#.event:link-updated">DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
 				</ul>
 			</li>
 			
@@ -99,10 +99,12 @@
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-docloop.html">docloop</a>.</span>
+            <span class="ancestors"><a href="module-docloop.html">docloop</a></span>
         
         DocloopLink
         </h2>
+        
+            <div class="class-description"><p>Class representing a link between a source and a target.</p></div>
         
     
 </header>
@@ -170,7 +172,7 @@
 
             
 
-            <td class="description last"><p>The core system. Since Core is a Factory for Links, this param will usually be set automatically.</p></td>
+            <td class="description last"><p>The core system. Since core is a factory for Links, this param will usually be set automatically.</p></td>
         </tr>
 
     
@@ -302,7 +304,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#EndpointData">EndpointData</a></span>
+<span class="param-type"><a href="DocloopEndpoint.html#EndpointData">EndpointData</a></span>
 
 
 
@@ -334,7 +336,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#EndpointData">EndpointData</a></span>
+<span class="param-type"><a href="DocloopEndpoint.html#EndpointData">EndpointData</a></span>
 
 
 
@@ -429,7 +431,7 @@
             <td class="type">
             
                 
-<span class="param-type">Endpoint</span>
+<span class="param-type"><a href="DocloopEndpoint.html#Endpoint">Endpoint</a></span>
 
 
 
@@ -453,7 +455,7 @@
             <td class="type">
             
                 
-<span class="param-type">Endpoint</span>
+<span class="param-type"><a href="DocloopEndpoint.html#Endpoint">Endpoint</a></span>
 
 
 
@@ -465,6 +467,54 @@
             
 
             <td class="description last"><p>An endpoint representing a target resource for issues</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>export</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="DocloopLink.html#LinkData">LinkData</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Getter</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>skeleton</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="DocloopLink.html#LinkSkeleton">LinkSkeleton</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Getter</p></td>
         </tr>
 
     
@@ -618,130 +668,6 @@
 
     
 
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<hr>
-<dt class="name" id="export">
-    <h4 id="export"><span class="type-signature"></span>export<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Extracts raw data from the link.</p>
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="skeleton">
-    <h4 id="skeleton"><span class="type-signature"></span>skeleton<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Extracts minimal data from the link to find it in the database</p>
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -972,7 +898,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#EndpointData">EndpointData</a></span>
+<span class="param-type"><a href="DocloopEndpoint.html#EndpointData">EndpointData</a></span>
 
 
 
@@ -996,7 +922,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#EndpointData">EndpointData</a></span>
+<span class="param-type"><a href="DocloopEndpoint.html#EndpointData">EndpointData</a></span>
 
 
 
@@ -1161,7 +1087,7 @@
             </dt>
             <dd>
                 
-<span class="param-type">DocloopError</span>
+<span class="param-type"><a href="DocloopError.html">DocloopError</a></span>
 
 
 
@@ -1442,7 +1368,7 @@
 
     
     <div class="description">
-        <p>Updates source and target using DocloopEndpoint#update</p>
+        <p>Updates source and target using <a href="DocloopEndpoint.html#update">DocloopEndpoint#update</a></p>
     </div>
     
 
@@ -1515,6 +1441,196 @@
         <h3 class="subsection-title">Type Definitions</h3>
 
         <dl>
+                
+<hr>
+<dt class="name" id="LinkData">
+    <h4 id="LinkData">LinkData</h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bson</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Link id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="DocloopEndpoint.html#EndpointData">EndpointData</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Source data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="DocloopEndpoint.html#EndpointData">EndpointData</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Target data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
                 
 <hr>
 <dt class="name" id="LinkSkeleton">
@@ -1598,7 +1714,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#EndpointSkeleton">EndpointSkeleton</a></span>
+<span class="param-type"><a href="DocloopEndpoint.html#EndpointSkeleton">EndpointSkeleton</a></span>
 
 
 
@@ -1622,7 +1738,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#EndpointSkeleton">EndpointSkeleton</a></span>
+<span class="param-type"><a href="DocloopEndpoint.html#EndpointSkeleton">EndpointSkeleton</a></span>
 
 
 
@@ -1730,7 +1846,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-02-27T22:53:36+01:00
+		on 2018-02-28T02:09:49+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

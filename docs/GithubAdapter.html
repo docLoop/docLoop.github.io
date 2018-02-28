@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>docloop Class: DocloopAdapter</title>
+	<title>docloop Class: GithubAdapter</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,14 +40,14 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="module-docloop.DocloopAdapter.html">docloop.DocloopAdapter</a></li><li><a href="module-docloop.DocloopEndpoint.html">docloop.DocloopEndpoint</a></li><li><a href="module-docloop.DocloopError.html">docloop.DocloopError</a></li><li><a href="module-docloop.DocloopLink.html">docloop.DocloopLink</a></li><li><a href="module-docloop.EventQueue-QueuedEvent.html">docloop.EventQueue~QueuedEvent</a></li><li><a href="module-githubAdapter.GithubAdapter.html">githubAdapter.GithubAdapter</a></li><li><a href="module-githubAdapter.GithubApp.html">githubAdapter.GithubApp</a></li><li><a href="module-githubAdapter.GithubTarget.html">githubAdapter.GithubTarget</a></li><li><a href="module-githubAdapter.GithubUser.html">githubAdapter.GithubUser</a></li><li><a href="module-paperhiveAdapter.PaperhiveAdapter.html">paperhiveAdapter.PaperhiveAdapter</a></li><li><a href="module-paperhiveAdapter.PaperhiveSource.html">paperhiveAdapter.PaperhiveSource</a></li>
+					<li><a href="DocloopAdapter.html">DocloopAdapter</a></li><li><a href="DocloopCore.html">DocloopCore</a></li><li><a href="DocloopEndpoint.html">DocloopEndpoint</a></li><li><a href="DocloopError.html">DocloopError</a></li><li><a href="DocloopLink.html">DocloopLink</a></li><li><a href="EventQueue.html">EventQueue</a></li><li><a href="EventQueue-QueuedEvent.html">EventQueue~QueuedEvent</a></li><li><a href="GithubAdapter.html">GithubAdapter</a></li><li><a href="GithubApp.html">GithubApp</a></li><li><a href="GithubTarget.html">GithubTarget</a></li><li><a href="GithubUser.html">GithubUser</a></li><li><a href="PaperhiveAdapter.html">PaperhiveAdapter</a></li><li><a href="PaperhiveSource.html">PaperhiveSource</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-docloop.DocloopAdapter.html#.event:annotation">docloop.DocloopAdapter.event:annotation</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-established">docloop.DocloopCore.event:link-established</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-removed">docloop.DocloopCore.event:link-removed</a></li><li><a href="module-docloop.DocloopCore.html#.event:link-updated">docloop.DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
+					<li><a href="DocloopAdapter.html#.event:annotation">DocloopAdapter.event:annotation</a></li><li><a href="DocloopCore.html#.event:link-established">DocloopCore.event:link-established</a></li><li><a href="DocloopCore.html#.event:link-removed">DocloopCore.event:link-removed</a></li><li><a href="DocloopCore.html#.event:link-updated">DocloopCore.event:link-updated</a></li><li><a href="module-docloop.EventQueue.html#.event:-attempt">docloop.EventQueue.event:-attempt</a></li><li><a href="module-docloop.EventQueue.html#.event:-done">docloop.EventQueue.event:-done</a></li><li><a href="module-docloop.EventQueue.html#.event:-fail">docloop.EventQueue.event:-fail</a></li>
 				</ul>
 			</li>
 			
@@ -93,22 +93,23 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: DocloopAdapter</h1>
+	<h1 class="page-title">Class: GithubAdapter</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-docloop.html">docloop</a>.</span>
+            <span class="ancestors"><a href="module-githubAdapter.html">githubAdapter</a></span>
         
-        DocloopAdapter
+        GithubAdapter
         </h2>
         
-            <div class="class-description"><p>This Class and any Class that extends DocloopAdapter are supposed to be passed to DocloopCore.use().</p>
-<p>All methods that start with an underscore '_' expect the actual session to be passed as argument and will 
-usually have a counterpart without the leading underscore that expects the adapter's session data as argument instead.</p>
-<p>The preferred way for an adapter to communicate with the core system or other adapters is through events. See module:docloop.DocloopCore#relayEvent.</p>
-<p>Tutorial: <a href="tutorial-custom_adapters.html">Custom adapters</a></p></div>
+            <div class="class-description"><p>Adapter to post issues and comments on github
+TODO: description
+TODO: eventque details
+TODO: Defaults
+TODO: typedefs for params and proerties.</p>
+<p>The following arguments and properties are on top of the arguments and properties of <a href="DocloopAdapter.html">DocloopAdapter</a>.</p></div>
         
     
 </header>
@@ -120,7 +121,7 @@ usually have a counterpart without the leading underscore that expects the adapt
         
 <hr>
 <dt>
-    <h4 class="name" id="DocloopAdapter"><span class="type-signature"></span>new DocloopAdapter(core, config)</h4>
+    <h4 class="name" id="GithubAdapter"><span class="type-signature"></span>new GithubAdapter(core, config [, eventQueue])</h4>
     
     
 </dt>
@@ -147,6 +148,8 @@ usually have a counterpart without the leading underscore that expects the adapt
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
         
 
@@ -173,10 +176,18 @@ usually have a counterpart without the leading underscore that expects the adapt
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>An instance of the docloop core.</p></td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -196,6 +207,14 @@ usually have a counterpart without the leading underscore that expects the adapt
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -218,8 +237,6 @@ usually have a counterpart without the leading underscore that expects the adapt
         
 
         
-        <th>Default</th>
-        
 
         <th class="last">Description</th>
     </tr>
@@ -230,7 +247,7 @@ usually have a counterpart without the leading underscore that expects the adapt
 
         <tr>
             
-                <td class="name"><code>id</code></td>
+                <td class="name"><code>appId</code></td>
             
 
             <td class="type">
@@ -254,57 +271,15 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last"><p>The id this adapter should be identified by (e.g. 'github').</p></td>
+            <td class="description last"><p>GithubApp Id.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>extraId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>This maybe useful if a custom adapter has a fixed id, but is supposed to be instantiated twice with different configs.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
+                <td class="name"><code>appPrivateKey</code></td>
             
 
             <td class="type">
@@ -330,21 +305,15 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 
             
-                <td class="default">
-                
-                    'DocloopAdapter'
-                
-                </td>
-            
 
-            <td class="description last"><p>A pretty name for the Adapter, that can actually be used in a client.</p></td>
+            <td class="description last"><p>GithubApp private. If not provided config.appPrivateKeyLocation is required.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>appPrivateKeyLocation</code></td>
             
 
             <td class="type">
@@ -360,42 +329,6 @@ usually have a counterpart without the leading underscore that expects the adapt
             
                 <td class="attributes">
                 
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Either 'source' or 'target'.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>endPointClass</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">DocloopEndpoint</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
                     &lt;optional><br>
                 
 
@@ -406,61 +339,22 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 
             
-                <td class="default">
-                
-                    DocloopEndpoint
-                
-                </td>
-            
 
-            <td class="description last"><p>Endpoint class or any class extending Endpoint.</p></td>
+            <td class="description last"><p>GithubApp private key location. Can only be omitted if config.appPrivateKey is present.</p></td>
         </tr>
 
     
+    </tbody>
+</table>
 
-        <tr>
-            
-                <td class="name"><code>extraEndpoints</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
             </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    false
-                
-                </td>
-            
-
-            <td class="description last"><p>True iff there are valid endpoints that are not returned by .getEndpoints()</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>endpointDefaultConfig</code></td>
+                <td class="name"><code>eventQueue</code></td>
             
 
             <td class="type">
@@ -486,27 +380,21 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 
             
-                <td class="default">
-                
-                    {}
-                
-                </td>
-            
 
-            <td class="description last"><p>Configuration object with default values for endpoints. These values will be used if no other values are provided when a new enpoint is created.</p></td>
+            <td class="description last"><p>EventQueue config. See <a href="EventQueue.html">EventQueue</a>.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>extraEndpoints</code></td>
+                <td class="name"><code>config.oAuth</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type">Object</span>
 
 
 
@@ -524,19 +412,40 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 
             
-                <td class="default">
+
+            <td class="description last"><p>Data to authorize GithubApp. Sets .oAuth property.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>config.dummy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
                 
                 </td>
             
 
-            <td class="description last"><p>true iff there are valid endpoints that are not returned by .getEndpoints()</p></td>
-        </tr>
+            
 
-    
-    </tbody>
-</table>
-
-            </td>
+            <td class="description last"><p>Sets dummy property.</p></td>
         </tr>
 
     
@@ -563,8 +472,6 @@ usually have a counterpart without the leading underscore that expects the adapt
         <th>Type</th>
 
         
-        <th>Argument</th>
-        
 
         
 
@@ -577,37 +484,7 @@ usually have a counterpart without the leading underscore that expects the adapt
 
         <tr>
             
-                <td class="name"><code>core</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="DocloopCore.html">DocloopCore</a></span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>id</code></td>
+                <td class="name"><code>endpointDefaultConfig.label</code></td>
             
 
             <td class="type">
@@ -621,29 +498,23 @@ usually have a counterpart without the leading underscore that expects the adapt
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Name of the label to tag a new issue with</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>name</code></td>
+                <td class="name"><code>githubUser</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="GithubUser.html">GithubUser</a></span>
 
 
 
@@ -651,29 +522,23 @@ usually have a counterpart without the leading underscore that expects the adapt
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>API wrapper for github user interaction</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>githubApp</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="GithubApp.html">GithubApp</a></span>
 
 
 
@@ -681,113 +546,17 @@ usually have a counterpart without the leading underscore that expects the adapt
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>API wrapper for github app interaction</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>endPointClass</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">DocloopEndpoint</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>endpointDefaultConfig</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>app</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">ExpressApp</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Express sub app of core.app. All routes will be relative to '/adapters/'+this.id.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>endpoints</code></td>
+                <td class="name"><code>events</code></td>
             
 
             <td class="type">
@@ -801,23 +570,83 @@ usually have a counterpart without the leading underscore that expects the adapt
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"><p>Mongo-db collection for stored endpoints.</p></td>
+            <td class="description last"><p>Mongo-db collection for stored events</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>help</code></td>
+                <td class="name"><code>eventQueue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EventQueue.html">EventQueue</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The event queue the event is stored in</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>oAuth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>OAuth credentials has provided.</p>
+                <h6>Properties</h6>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>clientSecret</code></td>
             
 
             <td class="type">
@@ -831,18 +660,162 @@ usually have a counterpart without the leading underscore that expects the adapt
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
 
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accessTokenUrl</code></td>
+            
+
+            <td class="type">
+            
                 
-                </td>
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
             
 
             
 
-            <td class="description last"><p>Help text used by the client.</p></td>
+            <td class="description last"><p>Url to retrieve an access token from after github posted to Callback (See: GithubApps)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>authUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Url to open for the user to enter credentials.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dummy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Content of the dummy issue created when a comment is missing its parent issue.</p>
+                <h6>Properties</h6>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Title of the dummy issue.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Body of the dummy issze.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -913,7 +886,7 @@ usually have a counterpart without the leading underscore that expects the adapt
 
 
     <ul>
-        <li>EventEmitter</li>
+        <li><a href="DocloopAdapter.html">DocloopAdapter</a></li>
     </ul>
 
 
@@ -1014,6 +987,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#_clearSessionData">DocloopAdapter#_clearSessionData</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1071,7 +1053,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type"><a href="DocloopAdapter.html#SessionData">SessionData</a></span>
 
 
 
@@ -1166,6 +1148,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#_getAuthState">DocloopAdapter#_getAuthState</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1219,7 +1210,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type"><a href="DocloopAdapter.html#AuthState">AuthState</a></span>
 
 
 
@@ -1314,6 +1305,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#_getData">DocloopAdapter#_getData</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1367,7 +1367,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">AdapterData</span>
+<span class="param-type"><a href="DocloopAdapter.html#AdapterData">AdapterData</a></span>
 
 
 
@@ -1462,6 +1462,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#_getEndpoints">DocloopAdapter#_getEndpoints</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1515,7 +1524,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;DocloopEndpoint></span>
+<span class="param-type">Array.&lt;<a href="DocloopEndpoint.html">DocloopEndpoint</a>></span>
 
 
 
@@ -1610,6 +1619,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#_getSessionData">DocloopAdapter#_getSessionData</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1667,7 +1685,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type"><a href="DocloopAdapter.html#SessionData">SessionData</a></span>
 
 
 
@@ -1789,6 +1807,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#_getStoredEndpoint">DocloopAdapter#_getStoredEndpoint</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1842,7 +1869,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">ValidEndpoint</span>
+<span class="param-type"><a href="DocloopEndpoint.html#ValidEndpoint">ValidEndpoint</a></span>
 
 
 
@@ -1937,6 +1964,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#_getStoredEndpoints">DocloopAdapter#_getStoredEndpoints</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1990,7 +2026,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;DocloopEndpoint></span>
+<span class="param-type">Array.&lt;<a href="DocloopEndpoint.html">DocloopEndpoint</a>></span>
 
 
 
@@ -2007,682 +2043,12 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 <hr>
 <dt>
-    <h4 class="name" id="_handleGetEndpointsRequest"><span class="type-signature">&lt;async, route> </span>_handleGetEndpointsRequest(req, res)</h4>
+    <h4 class="name" id="getAuthState"><span class="type-signature">&lt;async> </span>getAuthState(session_data)</h4>
     
     
 </dt>
 <dd>
 
-    
-    <div class="description">
-        <h5>Route:</h5>
-                            <table class="params">
-                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
-                            <tr>
-                            <td class="type">GET</td>
-                            <td class="name last">/adapters/:adapter-id/endpoints</td>
-                            </tr>
-                            </table>
-                            <p>Express request handler. Sends privileged Enpoints to the client.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>req</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Express request object</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>res</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Express result object</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="_handleGetGuessEndpointRequest"><span class="type-signature">&lt;async, route> </span>_handleGetGuessEndpointRequest(req, res)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <h5>Route:</h5>
-                            <table class="params">
-                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
-                            <tr>
-                            <td class="type">GET</td>
-                            <td class="name last">/adapters/:adapter-id/guessEndpoint/:str</td>
-                            </tr>
-                            </table>
-                            <p>Express request handler. Guesses Endpoint from request paramter and sends it to the client.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>req</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Express request object</p>
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Request parameters</p>
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>str</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>String to guess the endpoint from</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>res</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Express result object</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="_handleGetRequest"><span class="type-signature">&lt;async, route> </span>_handleGetRequest(req, res)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <h5>Route:</h5>
-                            <table class="params">
-                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
-                            <tr>
-                            <td class="type">GET</td>
-                            <td class="name last">/adapters/:adapter-id</td>
-                            </tr>
-                            </table>
-                            <p>Express request handler. Sends AdapterData to the client.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>req</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Express request object</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>res</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Express result object</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="_handlePostSignOff"><span class="type-signature">&lt;async, route> </span>_handlePostSignOff()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <h5>Route:</h5>
-                            <table class="params">
-                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
-                            <tr>
-                            <td class="type">GET</td>
-                            <td class="name last">/adapters/:adapter-id/signoff</td>
-                            </tr>
-                            </table>
-                            <p>Express request handler. Clears current session data for this adapter.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getAuthState"><span class="type-signature">&lt;async, abstract> </span>getAuthState(session_data)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method is meant to be overwritten by a custom adapter class. Returns the authorization state for the adapter in the current session.</p>
-    </div>
     
 
     
@@ -2722,7 +2088,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">session_data</span>
 
 
 
@@ -2733,7 +2099,7 @@ usually have a counterpart without the leading underscore that expects the adapt
 
             
 
-            <td class="description last"><p>Data of the current session associated with this adapter</p></td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -2752,6 +2118,11 @@ usually have a counterpart without the leading underscore that expects the adapt
 
 	
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="DocloopAdapter.html#getAuthState">DocloopAdapter#getAuthState</a>
+    </li></ul></dd>
     
 
     
@@ -2804,7 +2175,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type"><a href="global.html#AuthState">AuthState</a></span>
+<span class="param-type"><a href="DocloopAdapter.html#AuthState">AuthState</a></span>
 
 
 
@@ -2821,7 +2192,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 <hr>
 <dt>
-    <h4 class="name" id="getEndpoints"><span class="type-signature">&lt;async, abstract> </span>getEndpoints(session_data)</h4>
+    <h4 class="name" id="getEndpoints"><span class="type-signature">&lt;async> </span>getEndpoints(session_data)</h4>
     
     
 </dt>
@@ -2870,7 +2241,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><a href="DocloopAdapter.html#SessionData">SessionData</a></span>
 
 
 
@@ -2899,7 +2270,21 @@ usually have a counterpart without the leading underscore that expects the adapt
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#getEndpoints">DocloopAdapter#getEndpoints</a>
+			</li>
+		</ul>
+	</dd>
+	
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="DocloopAdapter.html#getEndpoints">DocloopAdapter#getEndpoints</a>
+    </li></ul></dd>
     
 
     
@@ -2952,7 +2337,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;ValidEndpoint></span>
+<span class="param-type">Array.&lt;<a href="DocloopEndpoint.html#ValidEndpoint">ValidEndpoint</a>></span>
 
 
 
@@ -2969,7 +2354,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 <hr>
 <dt>
-    <h4 class="name" id="getStoredEndpoint"><span class="type-signature">&lt;async> </span>getStoredEndpoint(id, session)</h4>
+    <h4 class="name" id="getStoredEndpoint"><span class="type-signature">&lt;async> </span>getStoredEndpoint(id)</h4>
     
     
 </dt>
@@ -3036,30 +2421,6 @@ usually have a counterpart without the leading underscore that expects the adapt
         </tr>
 
     
-
-        <tr>
-            
-                <td class="name"><code>session</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Express session</p></td>
-        </tr>
-
-    
     </tbody>
 </table>
 
@@ -3073,6 +2434,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#getStoredEndpoint">DocloopAdapter#getStoredEndpoint</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -3131,7 +2501,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             </dt>
             <dd>
                 
-<span class="param-type">DocloopError</span>
+<span class="param-type"><a href="DocloopError.html">DocloopError</a></span>
 
 
 
@@ -3157,7 +2527,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             </dt>
             <dd>
                 
-<span class="param-type">DocloopError</span>
+<span class="param-type"><a href="DocloopError.html">DocloopError</a></span>
 
 
 
@@ -3181,7 +2551,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">Endpoint</span>
+<span class="param-type"><a href="DocloopEndpoint.html#Endpoint">Endpoint</a></span>
 
 
 
@@ -3198,7 +2568,7 @@ usually have a counterpart without the leading underscore that expects the adapt
             
 <hr>
 <dt>
-    <h4 class="name" id="getStoredEndpoints"><span class="type-signature">&lt;async, abstract> </span>getStoredEndpoints()</h4>
+    <h4 class="name" id="getStoredEndpoints"><span class="type-signature">&lt;async> </span>getStoredEndpoints(session_data)</h4>
     
     
 </dt>
@@ -3215,6 +2585,218 @@ usually have a counterpart without the leading underscore that expects the adapt
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>session_data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="DocloopAdapter.html#SessionData">SessionData</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Data of the current session associated with this adapter</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#getStoredEndpoints">DocloopAdapter#getStoredEndpoints</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="DocloopAdapter.html#getStoredEndpoints">DocloopAdapter#getStoredEndpoints</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="DocloopEndpoint.html#ValidEndpoint">ValidEndpoint</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getUserRepos"><span class="type-signature">&lt;async> </span>getUserRepos(session_data)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get all Github repositories for the user authorized for with the access token in session data.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>session_data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="DocloopAdapter.html#SessionData">SessionData</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -3279,12 +2861,213 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;ValidEndpoint></span>
+<span class="param-type">Array.&lt;Object></span>
 
 
 
     </dd>
 </dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="handleOAuthCallback"><span class="type-signature">&lt;async, route> </span>handleOAuthCallback(req, res)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/adapters/github/oauth/callback</td>
+                            </tr>
+                            </table>
+                            <p>Handle request sent by github after successful authorization. 
+Uses the app config data and posted code to gain access token from github and store it in session data for later use.
+If successful redirects back to the configured front end url.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express request object</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Express result object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    
+            
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If not successful</p>
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="DocloopError.html">DocloopError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+
+        
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>undefined</p>
+</div>
+
+
 
 
         
@@ -3374,6 +3157,15 @@ usually have a counterpart without the leading underscore that expects the adapt
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="DocloopAdapter.html#newEndpoint">DocloopAdapter#newEndpoint</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -3431,7 +3223,7 @@ usually have a counterpart without the leading underscore that expects the adapt
     </dt>
     <dd>
         
-<span class="param-type">DocloopEndpoint</span>
+<span class="param-type"><a href="DocloopEndpoint.html">DocloopEndpoint</a></span>
 
 
 
@@ -3444,191 +3236,32 @@ usually have a counterpart without the leading underscore that expects the adapt
     
 </dd>
 
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Type Definitions</h3>
-
-        <dl>
-                
-<hr>
-<dt class="name" id=".Adapter">
-    <h4 id=".Adapter">Adapter</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>An instance of either <a href="module-docloop.DocloopAdapter.html">DocloopAdapter</a> or any Class extending it.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Object</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
+        
             
-                
 <hr>
-<dt class="name" id=".AdapterClass">
-    <h4 id=".AdapterClass">AdapterClass</h4>
-
+<dt>
+    <h4 class="name" id="queueAnnotationEvent"><span class="type-signature"></span>queueAnnotationEvent(Annotation)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
-        <p>Either <a href="module-docloop.DocloopAdapter.html">DocloopAdapter</a> or any Class extending it.</p>
+        <p>Add an annotation event to the event queue</p>
     </div>
     
 
     
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Class</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
     
-
     
+        <h5>Parameters:</h5>
+        
 
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-            
-                
-<hr>
-<dt class="name" id=".AdapterData">
-    <h4 id=".AdapterData">AdapterData</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Data concerning an adapter meant for client use.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Object</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3650,13 +3283,13 @@ usually have a counterpart without the leading underscore that expects the adapt
 
         <tr>
             
-                <td class="name"><code>id</code></td>
+                <td class="name"><code>Annotation</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="DocloopAdapter.html#Annotation">Annotation</a></span>
 
 
 
@@ -3667,189 +3300,12 @@ usually have a counterpart without the leading underscore that expects the adapt
 
             
 
-            <td class="description last"><p>The adapter's id</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The adapter's name</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The adapter's type</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>extraEndpoints</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The adapter's .extraEndpoints value</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>endpointDefaultConfig</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The adapter's .endpointDefaultConfig'value</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>auth</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#AuthState">AuthState</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The adapters authorization state. (see ...)</p></td>
+            <td class="description last"><p>from an annotation event</p></td>
         </tr>
 
     
     </tbody>
 </table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-            
-                
-<hr>
-<dt class="name" id=".Annotation">
-    <h4 id=".Annotation">Annotation</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>TODO</p>
-    </div>
-    
 
     
 
@@ -3894,19 +3350,45 @@ usually have a counterpart without the leading underscore that expects the adapt
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
-            </dl>
-    
-
-    
-        <h3 class="subsection-title">Events</h3>
-
-        <dl>
+        
             
 <hr>
 <dt>
-    <h4 class="name" id=".event:annotation">annotation</h4>
+    <h4 class="name" id="queueReplyEvent"><span class="type-signature"></span>queueReplyEvent(Reply)</h4>
     
     
 </dt>
@@ -3914,21 +3396,65 @@ usually have a counterpart without the leading underscore that expects the adapt
 
     
     <div class="description">
-        <p>TODO</p>
+        <p>Add an reply event to the event queue</p>
     </div>
     
 
     
 
     
-        <h5>Type: 
-<span class="param-type"><a href="global.html#Annotation">Annotation</a></span>
-
-
-</h5>
-    
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Reply</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Reply">Reply</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>from an reply event#</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -3982,11 +3508,35 @@ usually have a counterpart without the leading underscore that expects the adapt
     
 
     
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
 
     
 </dd>
 
         </dl>
+    
+
+    
+
     
 </article>
 
@@ -4032,7 +3582,7 @@ usually have a counterpart without the leading underscore that expects the adapt
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-02-27T22:53:36+01:00
+		on 2018-02-28T02:09:49+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
